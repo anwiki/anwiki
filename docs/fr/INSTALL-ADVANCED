@@ -1,0 +1,223 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+ _____________________________________________________________________
+ 
+              INSTALLATION D'ANWIKI : INSTALLATION AVANCEE
+ _____________________________________________________________________
+
+
+Vous pouvez visiter http://www.anwiki.com/releases pour obtenir la dernière version de ce document.
+Si vous avez besoin d'aide, consultez http://www.anwiki.com/support
+
+
+L'installation avancée est relativement plus compliquée qu'une installation de base, mais elle vaut le coup pour :
+ 1) garantir un meilleur niveau de sécurité sur une installation indépendante
+ 2) exécuter plusieurs instances d'Anwiki sur un même serveur, en partageant le code source commun d'Anwiki
+   (moins d'espace disque utilisé, et probablement de meilleurs performances)
+ 3) utiliser un serveur alternatif pour les fichiers statiques (images, javascript, css...)
+
+
+
+ (1) Installation indépendante (une seule instance d'Anwiki)
+----------------------------------
+
+Ce type d'installation déplace tous les fichiers d'Anwiki en dehors du dossier "DocumentRoot" du serveur web.
+Ensuite, seul le script principal et tous les fichiers statiques sont dupliqués dans le dossier DocumentRoot.
+Ainsi, aucun des fichiers potentiellement sensibles (fichiers de configuration, journaux d'erreurs, fichiers de cache, classes PHP) ne peuvent être accédés directement depuis le web.
+
+
+1.1 Créez un dossier quelque part EN DEHORS du DocumentRoot, pour y installer Anwiki. Disons "/home/anw/anwiki-src" par exemple.
+    *** Ceci est votre unique dossier "root setup" (racine d'installation). ***
+
+1.2 Modifiez le fichier _anwiki-override-DISABLED.inc.php comme ceci :
+<?php
+    define('ANWPATH_ROOT_SETUP', '/home/anw/anwiki-src'); //indiquez ici votre propre répertoire "root directory"
+    define('ANWPATH_ROOT_SHARED', ANWPATH_ROOT_SETUP); //inutile de modifier cette ligne
+    require_once(ANWPATH_ROOT_SHARED.ANWFILE_INC);
+?>
+
+1.3 Renommez le fichier _anwiki-override-DISABLED.inc.php en _anwiki-override.inc.php
+
+1.4 Uploadez les fichiers suivants dans votre dossier "root setup" :
+    ./_addons/
+    ./_addons-static/
+    ./_override/
+    ./_override-static/
+    ./_writable/
+    
+    Uploadez également les fichiers suivants, comme nous sommes dans le cas d'une installation indépendante.
+    ./default/
+    ./default-static/
+    ./sources/
+    ./anwiki.inc.php
+
+1.5 Créez un dossier quelque part A L'INTERIEUR du DocumentRoot de votre serveur web. Prenons "/var/www/anwiki" par exemple.
+    *** Ceci est votre répertoire statique unique, à la fois pour les fichiers par défaut et de surcharge.
+
+1.6 Si vous souhaitez utiliser un serveur alternatif pour les fichiers statiques, vous pouvez passer cette étape.
+    Sinon, *copiez* les dossiers et fichiers suivants dans votre répertoire statique unique :
+    ./_addons-static/
+    ./_override-static/
+    
+    Copiez également les dossiers suivants, vu que nous sommes dans le cas d'une installation indépendante :
+    ./default-static/
+
+    Remarque : ces fichiers doivent être copiés, et non déplacés. Ils sont toujours requis dans votre répertoire "root setup".
+          Vous pouvez également utiliser un lien symbolique depuis les sous-dossiers statiques du dossier "root setup" vers le répertoire statique unique.
+    
+1.7 Uploadez les fichiers suivants non statiques qui doivent être accessibles depuis le serveur web, vers votre répertoire statique unique :
+    ./_anwiki-override.inc.php
+    ./.htaccess-default
+    ./engine.inc.php
+    ./index.php
+
+ 2. Suivez les instructions de la procédure "installation de base" dans le fichier "INSTALL", en commencant à l'étape 2.
+
+ 3. Si vous souhaitez utiliser un serveur alternatif pour les fichiers statiques, lisez les instructions ci-dessous.
+
+
+
+
+ (2) Plusieurs instances d'Anwiki sur un même serveur
+----------------------------------
+
+Ce type d'installation permet de partager le code source commun entre plusieurs instances d'Anwiki.
+Grâce à son architecture, vous pouvez héberger des dizaines d'instances d'Anwiki, en économisant de l'espace disque et en facilitant les mises à jour.
+
+
+
+
+1.1 Créez un dossier commun quelque part EN DEHORS du DocumentRoot, pour partager le code source commun d'Anwiki entre les différentes instances.
+    Prenons "/home/anwiki/anwiki-common-src" par exemple.
+    *** Ceci est votre "dossier racine partagé". ***
+
+1.2 Uploadez les fichiers partagés suivants vers votre dossier racine partagé :
+    ./default/
+    ./default-static/
+    ./sources/
+    ./anwiki.inc.php
+    
+    Remarque : ces fichiers ne devraient jamais être modifiés, pour faciliter les mises à jour.
+    Rappelez-vous que vous pouvez surcharger ou étendre tous les composants par défaut, 
+    et créer vos propres pilotes, actions, classes de contenus et greffons - qui ne sont pas stockés dans ce répertoire.
+
+1.3 Créez un dossier quelque part DANS le DocumentRoot de votre serveur, pour partager les fichiers statiques d'Anwiki entre les différentes instances.
+    Prenons "/var/www/anwiki-default" par exemple.
+    *** Ceci est votre dossier de "fichiers statiques par défaut". ***
+
+1.4 Si vous souhaitez utiliser un serveur alternatif pour les fichiers statiques, vous pouvez passer cette étape.
+    Autrement, *copiez* les répertoires suivants vers votre dossier de fichiers statiques par défaut.
+    ./default-static/
+    
+    Remarque : ces fichiers doivent être copiés, et non déplacés. Ils sont toujours requis dans le dossier racine partagé.
+    Vous pouvez également utiliser un lien symbolique depuis les sous-dossiers statiques du dossier racine partagé, vers le répertoire des ficheirs statiques par défaut.
+
+1.5 Pour chaque instance d'Anwiki sur le serveur, effectuez les étapes suivantes :
+
+    a) Créez un dossier quelque part EN DEHORS du DocumentRoot, dédié à votre nouvelle instance d'Anwiki.
+       Prenons "/home/anwiki/anwiki-instance-1" par exemple.
+       *** Ceci est votre répertoire "root setup" (racine racine, spécifique à l'instance). ***
+
+    b) Modifiez le fichier _anwiki-override-DISABLED.inc.php comme ceci :
+<?php
+    define('ANWPATH_ROOT_SETUP', '/home/anwiki/anwiki-instance-1'); //indiquez ici votre propre répertoire "root directory"
+    define('ANWPATH_ROOT_SHARED', '/home/anwiki/anwiki-common-src'); //indiquez ici votre propre dossier racine partagé
+    require_once(ANWPATH_ROOT_SHARED.ANWFILE_INC);
+?>
+
+    c) Renommez le fichier _anwiki-override-DISABLED.inc.php en _anwiki-override.inc.php
+    
+    d) Uploadez les fichiers suivants dans votre dossier "root setup" :
+       ./_addons/
+       ./_addons-static/
+       ./_override/
+       ./_override-static/
+       ./_writable/
+    
+    e) Créez un dossier quelque part A L'INTERIEUR du DocumentRoot de votre serveur web, pour les fichiers statiques de cette instance.
+       Prenons "/var/www/anwiki-instance-1" par exemple.
+       *** Ceci est le répertoire statique spécifique à l'instance ***
+    
+    f) Si vous souhaitez utiliser un serveur alternatif pour les fichiers statiques, vous pouvez passer cette étape.
+       Autrement, *copiez* les fichiers et dossiers suivants dans votre répertoire statique spécifique à l'instance :
+       ./_addons-static/
+       ./_override-static/
+    
+    Remarque : ces fichiers doivent être copiés, et non déplacés. Ils sont toujours requis dans le répertoire racine spécifique à l'instance.
+    Vous pouvez également utiliser des liens symboliques provenant des sous-dossiers statiques du répertoire racine spécifique, vers le répertoire statique spécifique à l'instance.
+    
+    g) Uploadez les fichiers non statiques suivants qui doivent être accessibles depuis le web, vers votre répertoire racine spécifique :
+       ./_anwiki-override.inc.php
+       ./.htaccess-default
+       ./index.php
+
+ 2. Suivez les instructions de la procédure "installation de base" dans le fichier "INSTALL", en commencant à l'étape 2.
+
+ 3. Si vous souhaitez utiliser un serveur alternatif pour les fichiers statiques, lisez les instructions ci-dessous.
+    
+
+
+
+ (3) Optionnel : serveur alternatif pour les fichiers statiques
+------------------------------------------------
+
+L'utilisation d'un miroir alternatif  pour servir les fichiers statiques peut aider à réduire la charge du serveur principal, si vous faites face à de fortes affluences.
+Ceci peut également accélérer la navigation des utilisateurs, en leur évitant de télécharger plusieurs fois le même fichier statique, lorsqu'ils visitent plusieurs instances d'Anwiki.
+L'adressage des fichiers statiques est une fonctionnalité native d'Anwiki.
+
+
+1. Suivez les étapes d'installation décrites précédemment.
+
+2. Créez un répertoire sur le serveur web qui hébergera les fichiers statiques par défaut. Ce serveur n'a pas besoin de supporter PHP.
+   Disons que nous créons le répertoire "/var/www2/anwiki-static-files-default/" sur la machine "static server".
+   Ce répertoire peut être accédé depuis "http://staticserver/anwiki-static-files-default/".
+   *** Cette adresse web est votre "URL de fichiers statiques par défaut". ***
+
+3. Uploadez une *copie* de vos fichiers statiques par défaut qui sont présents dans votre "dossier racine partagé" :
+   ./_default-static/
+
+   Vous pouvez simplement les uploader via FTP, SCP ou utiliser rsync.
+   Il est très important de garder les fichiers de la machine "static server" synchronisés avec le dossier racine partagé du serveur principal :
+   si un fichier est présent sur la machine "static server" mais absent du dossier racine partagé, il ne pourra être accédé.
+
+4. Créez un dossier sur le serveur web qui hébergera les fichiers statiques spécifiques à l'instance d'Anwiki.
+   -> Si vous avez effectué une installation indépendante, ce sera probablement le même serveur statique que pour les fichiers statiques par défaut.
+   -> Si vous exécutez plusieurs instances d'Anwiki, vous devrez créer un tel dossier pour chaque instance, sur le serveur statique de votre choix.
+
+   Disons que nous créons le répertoire "/var/www2/anwiki-static-files-mysetup/" sur la machine "server 1".
+   Ce répertoire peut être accédé depuis "http://staticserver/anwiki-static-files-mysetup/".
+   *** Cette adresse web est votre "URL de fichiers statiques spécifiques à l'instance". ***
+
+5. Uploadez une *copie* de vos fichiers statiques spécifiques à l'instance qui sont présents dans votre dossier racine spécifique
+   (si vous avez effectué une installation indépendante, ce sera votre "dossier racine") :
+   ./_addons-static/
+   ./_override-static/
+
+   Vous pouvez simplement les uploader via FTP, SCP ou utiliser rsync.
+   Il est très important de garder les fichiers de la machine "static server" synchronisés avec le dossier racine partagé du serveur principal :
+   si un fichier est présent sur la machine "static server" mais absent du dossier racine partagé, il ne pourra être accédé.
+
+6. Enfin, rendez-vous dans la configuration des paramètres généraux : http://www.example.com/your-anwiki-directory/?a=editconfig
+   Allez à : Paramètres avancés -> Accès aux fichiers statiques.
+   Activez le serveur alternatif et renseignez votre "URL de fichiers statiques par défaut" et votre "URL de fichier statiques spécifiques à l'instance".
+
+
+7. Enjoy!
+
+   Vos retours d'expériences sont les bienvenus concernant les installations avancées, sur http://forum.anwiki.com
+

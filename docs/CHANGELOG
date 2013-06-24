@@ -1,0 +1,49 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+ _____________________________________________________________________
+ 
+                             CHANGELOG                           
+ _____________________________________________________________________
+
+
+ Please visit http://www.anwiki.com/releases to get full changelog.
+
+
+
+Major changes in Anwiki 0.2.5
+--------------------------------------------------------
+- URLs passed to AnwFeed and AnwFeedItem constructors must now be explicitely absolute.
+  If you have your own custom contentclasses, update implementations of toFeedItem() by using:
+  * AnwUtils::aLinkAbsolute() instead of AnwUtils::aLink()
+  * AnwUtils::linkAbsolute() instead of AnwUtils::link()
+- The following functions from AnwUtils are deprecated: escapeFieldValue(), escapeTextareaValue() and escapeLink().
+  You can now use the following ones: xQuote(), xText(), xTextareaValue(). New function: escapeQuoteApostrophe().
+  Aliases of these new functions can be called directly from template context: {$this->xQuote()}, {$this->xText()}, {$this->xTextareaValue()}, {$this->escapeQuoteApostrophe()}
+- A lot of template were updated for protecting against XSS. If you have overriden some templates, make sure they are up to date!
+
+
+
+Major changes in Anwiki 0.2.2
+--------------------------------------------------------
+
+TEMPLATES UPDATES:
+
+- AnwTemplateDefault_action_view.viewPage(): changed signature
+- AnwTemplateDefault_action_view.pageTranslations(): new function
+- AnwTemplateDefault_action_view.pageTranslations.viewPage(): updated code
+

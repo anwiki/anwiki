@@ -1,0 +1,32 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Styles for contentclass news.
+ * @package Anwiki
+ * @version $Id: contentclass_news.css 170 2009-04-05 18:06:49Z anw $
+ * @copyright 2007-2009 Antoine Walter
+ * @license http://www.gnu.org/copyleft/gpl.html GNU Public License 3
+ */
+
+
+div.cc-news div.news_intro { font-weight:bold; margin-bottom:1.5em; }
+div.cc-news div.news_intro, div.news_body { text-align:justify; }
+div.cc-news div.news_date { font-weight:bold; float:right; }
+div.cc-news div.news_categories { float:right; clear:right; margin-top:1em; }
+div.cc-news div.news_categories a { background:#F5E1CD; padding:2px 5px; -moz-border-radius: 0.5em; border-radius: 0.5em; -khtml-border-radius: 0.5em; }
+

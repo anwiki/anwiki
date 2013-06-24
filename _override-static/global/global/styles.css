@@ -1,0 +1,8 @@
+/**
+ * Anwiki CSS override file.
+ * You can put your own CSS here.
+ */
+
+/* logo */
+div#logo h1 { margin:0; }
+div#logo h1 a { display: block; text-indent: -5000px; height:100px; width:300px; background:url("img/header.png") no-repeat; }

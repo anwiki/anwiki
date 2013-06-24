@@ -1,0 +1,60 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+ _____________________________________________________________________
+ 
+                 INSTALLING ANWIKI: BASIC SETUP
+ _____________________________________________________________________
+
+
+Please visit http://www.anwiki.com/releases to get last updated instructions.
+If you need help, read http://www.anwiki.com/support
+
+Basic setup is the easiest and fastest installation mode.
+However, you should read "advanced setup" instructions from file "INSTALL-ADVANCED":
+ * if you are concerned about security
+ * if you want to run mutliple Anwiki instances on the same server
+ * if you want to use an alternate server for static files (images, javascript, css...)
+ * if you likes to play with "mv" command just for fun
+
+Otherwise, just follow the following steps:
+
+1. Upload all files from "anwiki" folder to your website
+
+2. Give write permissions for the web server to the following files:
+   ./_writable/ and all subdirectories/files
+   ./_override/*/*.cfg.php
+   
+   If you don't fix these permissions now, install assistant will notify you.
+   Permissions depends on each server setup, but a chmod g+w (and eventually chgrp www-data) should be sufficient.
+
+3. If you plan to use URL rewriting and if your server allows it, rename:
+   ./htaccess-DISABLED to ./.htaccess
+
+4. Go to http://www.example.com/your-anwiki-directory/ and follow instructions
+
+5. Delete ./default/actions/action_install/ directory when installation is finished
+
+6. Edit general settings on http://www.example.com/your-anwiki-directory/?a=editconfig
+   Friendly URLs can be enabled from: Setup -> Location settings.
+
+7. Enjoy!
+
+Looking for additional components to customize your Anwiki setup and add new features?
+Check our components directory on http://www.anwiki.com/components
+

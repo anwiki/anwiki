@@ -1,0 +1,84 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Anwiki's styles for editing structured content.
+ * @package Anwiki
+ * @version $Id: editcontent.css 333 2010-09-29 20:28:05Z anw $
+ * @copyright 2007-2009 Antoine Walter
+ * @license http://www.gnu.org/copyleft/gpl.html GNU Public License 3
+ */
+
+div#content form.editcontent { margin-right:1.5em; }
+
+form.editcontent div.contentfield { /*clear:both;*/ margin-top:1em;
+								position:relative; /* for positionning tips */ }
+
+form.editcontent textarea.contentfield_xml { width:99%; border:1px solid #000000; }
+form.editcontent input.contentfield_string { width:25em; border:1px solid #000000; }
+form.editcontent input.contentfield_password { width:10em; border:1px solid #000000; }
+form.editcontent input.contentfield_integer { width:4em; border:1px solid #000000; }
+form.editcontent fieldset.contentfield_checkboxgroup { -moz-border-radius: 0.5em; border-radius: 0.5em; -khtml-border-radius: 0.5em; border:1px solid #000; }
+form.editcontent fieldset.contentfield_checkboxgroup div.checkboxgroup_item { float:left; width:18em; }
+form.editcontent div.contentfielderror { background-color:pink; }
+
+form.editcontent div.contentfield_multiple { border-left:6px solid white; padding:0px 10px; }
+form.editcontent div.contentfield_container { padding:0.5em 1em; margin:5px 0px; border:1px dashed #000000; background-color:#D3D5FC; }
+form.editcontent div.contentfield_container div.contentfield_container { background-color:white; border:1px solid #000000; }
+
+form.editcontent div.contentfield_error { background-color:pink; padding:0.8em; border-left:2px solid #FF0000; border-right:2px solid #FF0000; }
+form.editcontent div.contentfield_overriding > label { font-weight:bold; }
+
+form.editcontent div.contentfield_tip, form.editcontent div.contentmultiplicity_tip { display:none; float:right; clear:right; padding:0.2em 0.4em; font-size:0.7em; -moz-border-radius: 1em; border-radius: 1em; -khtml-border-radius: 1em; }
+form.editcontent div.contentfield_tip { background-color:#FFFBB5; }
+form.editcontent div.contentmultiplicity_tip { background-color:#F5E1CD; }
+form.editcontent div.contentfield:hover > div.contentfield_tip, form.editcontent div.contentfield_multiple_instance:hover > div.contentfield_tip, form.editcontent div.contentfield:hover > div.contentmultiplicity_tip { display:block }
+
+form.editcontent div.contentfield_explain { font-size:0.7em; padding:0.3em; background-color:#F5E1CD; }
+
+form.editcontent a.textareafocusline { cursor:pointer; text-decoration:underline; }
+form.editcontent a.contentmultiplicity_add, form.editcontent a.contentmultiplicity_remove { padding:0em 0.4em; text-decoration:none; font-size:0.8em; }
+form.editcontent a.contentmultiplicity_add { background-color:lightgreen; border:1px solid green; color:green; }
+
+form.editcontent div.contentmultiplicity_tools { /*position:absolute; right:0;*/float:right; clear:right; /*z-index:3;*/ }
+form.editcontent div.contentmultiplicity_tools a.contentmultiplicity_remove { background-color:pink; border:1px solid #FF0000; color:#FF0000; }
+form.editcontent div.contentmultiplicity_tools a.contentmultiplicity_remove, form.editcontent div.contentmultiplicity_tools a.contentmultiplicity_sort { float:right; }
+
+form.editcontent div.contentmultiplicity_tools { display:none; position:relative; z-index:3; /* needed position relative and z-index, for not being covered by _collapsed */ }
+form.editcontent div.contentfield_multiple_instance:hover >  div.contentmultiplicity_tools { display:block; }
+form.editcontent div.contentfield_multiple_instance:hover { background-color:#E8E8FC; }
+
+form.editcontent div.contentfield_delay { display:inline; }
+form.editcontent div.contentfield_delay input { width:2em; }
+
+form.editcontent div.contentfield_collapsed_expanded { display:none; }
+form.editcontent div.contentfield_collapsed_collapsed { position:relative; }
+form.editcontent div.contentfield_collapsed_collapsed div.break { clear:right; }
+form.editcontent div.contentfield_collapsed_collapsed a.contentfield_collapsed_expand { z-index:2; cursor:pointer; display:none; float:right; clear:right; margin:0.3em; /*position:absolute; top:0.3em; right:0.3em;*/ padding:0.5em 1em; border:1px solid #000; background-color:#FFF; position:relative; /* position relative needed to get over contentfield_explain in composed settings */ }
+form.editcontent div.contentfield_collapsed_collapsed:hover > a.contentfield_collapsed_expand { display:block; }
+
+form.editcontent div.contentfieldcomposed_explain { font-size:0.7em; padding:0.4em; background-color:#FFFBB5; -moz-border-radius: 1em; border-radius: 1em; -khtml-border-radius: 1em; }
+
+form.editcontent div.contentfield_tab { display:none; }
+form.editcontent div.contentfield_tab_explain { padding:1em; background-color:#FFFBB5; text-align:center; -moz-border-radius: 1em; border-radius: 1em; -khtml-border-radius: 1em; }
+
+form.editcontent div.contentfield_tabs { clear:right; padding:1em 2em 0em 2em; }
+form.editcontent div.contentfield_tabs a { display:block; background-color:#D3D5FC; padding:0.4em 1em; margin:0.2em; float:left; text-decoration:none;}
+
+/* contentfield: geoposition */
+form.editcontent div.contentfield_geoposition {height:210px}
+form.editcontent div.contentfield_geoposition div.map {width:250px; height:200px; float:right;}

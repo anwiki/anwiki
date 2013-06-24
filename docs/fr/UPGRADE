@@ -1,0 +1,48 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ _____________________________________________________________________
+ 
+                        MISE A JOUR D'ANWIKI
+ _____________________________________________________________________
+
+
+Merci de consulter http://www.anwiki.com/releases pour obtenir la dernière version de ce document.
+Si vous avez besoin d'aide, consultez http://www.anwiki.com/support
+
+
+Mise à jour de Anwiki 0.2.0 vers 0.2.5
+--------------------------------------------------------
+
+Même procédure que pour la version précédente.
+Jetez un œil au CHANGELOG si vous avez des surcharges personnalisées.
+
+
+
+
+Mise à jour de Anwiki 0.1.0 alpha 1 vers 0.2.0
+--------------------------------------------------------
+
+1. Extraire les nouveaux fichiers du paquet 0.2.0 obtenu en téléchargement.
+2. Remplacer tous les fichiers de votre installation actuelle par ceux du nouveau paquet, à l'exception des fichiers suivants :
+     * _addons/ (répertoire)
+     * _addons-static/ (répertoire)
+     * _override/ (répertoire)
+     * _override-static/ (répertoire)
+     * _writable/ (répertoire)
+     * _anwiki-override.inc.php (fichier, peut ne pas exister)
+3. Mise à jour effectuée !
+

@@ -1,0 +1,48 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ _____________________________________________________________________
+ 
+                        UPGRADING ANWIKI
+ _____________________________________________________________________
+
+
+Please visit http://www.anwiki.com/releases to get last updated instructions.
+If you need help, read http://www.anwiki.com/support
+
+
+Upgrading from Anwiki 0.2.0 to 0.2.5
+--------------------------------------------------------
+
+Same procedure as for previous version.
+Have a look to the CHANGELOG if you have custom overrides.
+
+
+
+
+Upgrading from Anwiki 0.1.0 alpha 1 to 0.2.0
+--------------------------------------------------------
+
+1. Extract new files from 0.2.0 download package
+2. Replace all files from your current setup with the new ones, except the following:
+     * _addons/ (directory)
+     * _addons-static/ (directory)
+     * _override/ (directory)
+     * _override-static/ (directory)
+     * _writable/ (directory)
+     * _anwiki-override.inc.php (file, may not exists)
+3. Done!
+

@@ -1,0 +1,8 @@
+<?php
+
+class AnwTemplateDefault_stepinstall_cfg_sessions extends AnwTemplateDefaultStepInstallConfigureComponent
+{
+	
+}
+
+?>

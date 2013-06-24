@@ -1,0 +1,49 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+ _____________________________________________________________________
+ 
+                             HISTORIQUE DES VERSIONS                           
+ _____________________________________________________________________
+
+
+ Merci de consulter http://www.anwiki.com/releases pour obtenir un historique complet des versions.
+
+
+
+Principales modifications dans Anwiki 0.2.5
+--------------------------------------------------------
+- Les URLs passées aux constructeurs de AnwFeed et AnwFeedItem doivent maintenant être absolues.
+  Si vous avez vos propres classes de contenus, mettez à jour l'implémentation de la méthode toFeedItem() en utilisant :
+  * AnwUtils::aLinkAbsolute() plutôt que AnwUtils::aLink()
+  * AnwUtils::linkAbsolute() plutôt que AnwUtils::link()
+- Les fonctions suivantes de la classe AnwUtils sont dépréciées : escapeFieldValue(), escapeTextareaValue() and escapeLink().
+  Vous pouvez désormais utiliser les fonctions suivantes : xQuote(), xText(), xTextareaValue(). Nouvelle fonction : escapeQuoteApostrophe().
+  Des alias de ces nouvelles fonctions peuvent être appelés directement dans le contexte des templates : {$this->xQuote()}, {$this->xText()}, {$this->xTextareaValue()}, {$this->escapeQuoteApostrophe()}
+- De nombreux templates ont été mis à jour afin de se protéger contre des attaques XSS. Si vous avez surchargé certains templates, assurez-vous qu'ils soient bien à jour !
+
+
+
+Principales modifications dans Anwiki 0.2.2
+--------------------------------------------------------
+
+TEMPLATES MIS A JOUR :
+
+- AnwTemplateDefault_action_view.viewPage(): signature modifiée
+- AnwTemplateDefault_action_view.pageTranslations(): nouvelle fonction
+- AnwTemplateDefault_action_view.pageTranslations.viewPage(): code mis à jour
+

@@ -1,0 +1,60 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+ _____________________________________________________________________
+ 
+                 INSTALLATION D'ANWIKI : INSTALLATION DE BASE
+ _____________________________________________________________________
+
+
+Vous pouvez visiter http://www.anwiki.com/releases pour obtenir la dernière version de ce document.
+Si vous avez besoin d'aide, consultez http://www.anwiki.com/support
+
+L'installation de base est le mode d'installation le plus simple et le plus rapide.
+Cependant, vous devriez consulter les instructions "installation avancée" du fichier "INSTALL-ADVANCED":
+ * si vous êtes soucieux de la sécurité
+ * si vous souhaitez exécuter plusieurs instances d'Anwiki sur un même serveur
+ * si vous souhaitez utiliser un serveur alternatif pour les fichiers statiques  (images, javascript, css...)
+ * si vous aimez jouer avec la commande "mv" rien que pour le plaisir
+
+Autrement, suivez simplement les étapes suivantes :
+
+1. Uploadez tous les fichiers du dossier "anwiki" sur votre serveur web
+
+2. Donnez à votre serveur web les permissions en écriture sur les fichiers suivants :
+   ./_writable/ et tous les sous-dossiers et fichiers
+   ./_override/*/*.cfg.php
+   
+   Si ces permissions ne sont pas appliquées, l'assistant d'installation vous en informera.
+   Les permissions dépendent de la configuration de chaque serveur, mais généralement la commande  chmod g+w (et éventuellement chgrp www-data) devrait être suffisante.
+
+3. Si vous prévoyez d'utiliser l'URL rewriting et si votre serveur le supporte, renommez :
+   ./htaccess-DISABLED en ./.htaccess
+
+4. Rendez-vous à l'adresse http://www.example.com/your-anwiki-directory/ et suivez les instructions
+
+5. Supprimez le dossier ./default/actions/action_install/ lorsque l'installation est terminée
+
+6. Editez la configuration générale depuis l'adresse http://www.example.com/your-anwiki-directory/?a=editconfig
+   Les URLs réécrites peuvent être activées depuis : Installation -> Paramètres locaux.
+
+7. Enjoy!
+
+Envie d'installer des composants aditionnels pour personnaliser Anwiki et y ajouter de nouvelles fonctionnalités ?
+Découvrez notre annuaire de composants sur http://www.anwiki.com/components
+

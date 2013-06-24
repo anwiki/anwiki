@@ -1,0 +1,151 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * Anwiki's default CSS.
+ * @package Anwiki
+ * @version $Id: styles.css 309 2010-09-12 17:57:25Z anw $
+ * @copyright 2007-2009 Antoine Walter
+ * @license http://www.gnu.org/copyleft/gpl.html GNU Public License 3
+ */
+
+
+/* Global */
+html { font-size:100%; }
+body { font-size:0.8em; font-family:"Lucida Grande",Verdana,Lucida,Helvetica,Arial,sans-serif;
+	margin:0; padding:0; }
+img { border:none; }
+
+/* content */
+div#content h1, div#content h2, div#content h3, div#content h4, div#content h5 { font-weight:normal; margin:0 0 0.3em 0; padding:0.3em 0 0 0; border-bottom:1px solid #8CACBB; }
+div#content h1 { font-size:1.6em; font-weight:bold; }
+div#content h2 { font-size:1.5em; margin-left:1em; margin-top:2.2em; }
+div#content h3 { font-size:1.4em; margin-left:2em; margin-top:1.7em; }
+div#content h4 { font-size:1.2em; margin-left:4em; margin-top:1.3em; }
+div#content .untranslated { background-color:#F5E1CD; }
+
+a.rss { background:url('img/rss.gif') no-repeat left; padding:0.2em 0.2em 0.2em 18px; color:orange; font-weight:bold; text-decoration:underline; }
+div.explain { margin:3em; background-color:#F5E1CD; clear:both; text-align:center; padding:0.9em; -moz-border-radius: 1em; border-radius: 1em; -khtml-border-radius: 1em; }
+div.explain ul, div.explain ol { margin:0px; }
+
+/* footer */
+div#footer-container { clear:both; }
+div#footer-container div.footer { text-align:center; }
+div#debug { border:1px solid black; margin-top:3em; padding:0.3em; clear:both; font-size:0.7em; background-color:#F8F8F8; }
+div#exectime { font-size:0.7em; float:right; }
+div#bottom-container div.bottom { font-size:0.8em; text-align:center; }
+
+/* notices, errors... */
+div.error, div.done { border:1px solid; font-weight:bold; text-align:center; }
+div.error { background-color:pink; border-color:#FF0000; color:#FF0000;  }
+div.done { background-color:lightgreen; border-color:green; color:green; }
+div.notice { border:1px dashed orange; color:orange; clear:both; padding:0.2em 0.2em 0.2em 25px; margin:0.2em; background:url('img/notice.gif') 5px center no-repeat; }
+
+
+/* redirection screen */
+div.redirection { border:1px solid #8CACBB; text-align:center; }
+
+/* error screen */
+div.errorexception img, div.errorlock img, div.erroroccurred img { float:left; margin-right:1em; }
+div.errorlock div.errorlockdetails { clear:both; padding:0.4em; text-align:center; background-color:pink; border:1px solid red; -moz-border-radius: 0.5em; border-radius: 0.5em; -khtml-border-radius: 1em; }
+
+/* tables */
+tr.line1 { background-color:#F1F2FE; }
+tr.line2 { background-color:#FFFFFF; }
+
+/* table of pages */
+table.tablepages { font-size:0.9em; }
+table.tablepages td { padding:0em 1.6em; text-align:center; }
+table.tablepages td.pagename { text-align:left; }
+
+/* forms */
+div.anwfilter fieldset { background-color:#D3D5FC; border:1px solid #000000; padding:0.3em 0.5em; -moz-border-radius: 0.5em; border-radius: 0.5em; -khtml-border-radius: 1em; }
+div.anwfilter label { padding-right:0.2em; }
+input.intext, select.inselect, input.insubmit, input.inabort, input.inbutton { border:1px solid #000000; }
+input.captcha { width:2.7em; }
+input.insubmit { background-color:lightgreen; }
+input.inbuttonbig { padding:0.4em 0.6em; }
+input.inabort { background-color:pink; }
+input.incomment { background-color:orange; width:25em; }
+input.inpagename { width:23em; background-repeat:no-repeat; background-position:2px center; padding-left:20px; }
+select.languages option { background-repeat:no-repeat; background-position:right; }
+
+/* session nav */
+div#sessionnav { font-size:0.9em; float:right; text-align:right;}
+div#sessionnav select.languages { border:none; }
+a.anwsettings { background-repeat:no-repeat; background-position:right 50%; padding-right:18px; }
+
+/* global nav */
+div#globalnav { height:1.3em; font-size:0.8em; }
+div#globalnav ul { list-style-type:none; margin:0px; padding:0px; }
+div#globalnav ul li { display:inline; margin:0em 0.3em; }
+
+/* pageactions nav */
+div#pageactions { height:1.3em; }
+div#pageactions ul { list-style-type:none; margin:0px; padding:0px; }
+div#pageactions ul li { display:inline; margin:0px 0.2em; }
+div#pageactions a.pageaction { font-size:0.7em; }
+a.action, a.pageaction { background-repeat:no-repeat; }
+a.pageaction { padding:0.1em 0em 0.1em 18px; }
+
+/* top menu */
+/*
+div#topmenu div.menu { position:relative; }
+div#topmenu ul { list-style-type:none; margin:0px; padding:0px; }
+div#topmenu ul li { display:inline; }
+div#topmenu ul li ul { display:none; }
+div#topmenu li.current { font-weight:bold; }
+div#topmenu ul li.current ul { display:block; position:absolute; top:18px; }
+div#topmenu ul li.current ul li { font-weight:normal; }
+div#topmenu ul li.current ul li.current { font-weight:bold; }
+div#topmenu { margin-bottom:10px; }
+*/
+
+div.expandablecontainer, a.expandableswitch { float:right;  }
+a.expandableswitch { display:block; cursor:pointer; width:15px; height:15px; background-repeat:no-repeat; background-position:right center; }
+div.expanded a.expandableswitch { background-image:url('img/unexpand.gif'); }
+div.unexpanded a.expandableswitch { background-image:url('img/expand.gif'); }
+div.unexpanded div.expandablecontainer { display:none; }
+
+/* last changes */
+table.changes td { padding:0px 1.6em; text-align:center; font-size:0.85em; }
+table.changes td.changecomment {}
+div.lastchanges_nav { font-weight:bold; background-color:#FEEFE2; }
+div.lastchanges_nav a { color:black; font-size:12px; text-decoration:none; padding:0px 15px; }
+div.changeinfo { font-size:9px; color:#585858; }
+span.change_similars { font-size:0.8em;font-style:italic; }
+table.changes span.pageid { color:#808080; }
+
+/* settings */
+div.action-settings p { padding-left:6em; clear:both; }
+div.action-settings label { width:18em; float:left; }
+div.action-settings p.submit { padding-top:1.5em; text-align:center; }
+
+/* locks */
+div.lockinfo { background:url('img/lock.gif') no-repeat left; background-color:lightgreen; padding-left:18px; }
+div.lockinfo_expired { background-color:pink; color:#000000; }
+div.lockinfo_expiresoon { background-color:orange; color:#000000; }
+div.lockinfo a.refresh { background:url('img/refresh.gif') no-repeat left; padding-left:16px; }
+
+/* reauth */
+div.reauthinfo img { float:left; margin-right:1em; }
+div.reauthinfo { margin:10px 0; padding:3px; border:1px solid #FF0000; background:pink; }
+div.reauthinfo p { margin:0; padding:0; }
+
+/* misc */
+div.break { clear:both; }
+

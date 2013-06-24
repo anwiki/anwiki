@@ -1,0 +1,99 @@
+/**
+ * Anwiki is a multilingual content management system <http://www.anwiki.com>
+ * Copyright (C) 2007-2009 Antoine Walter <http://www.anw.fr>
+ * 
+ * Anwiki is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License.
+ * 
+ * Anwiki is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with Anwiki.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+ _____________________________________________________________________
+ 
+                          ABOUT ANWIKI TEAM                           
+ _____________________________________________________________________
+
+Visit http://www.anwiki.com/about to learn more about Anwiki team.
+
+
+
+
+ Anwiki development
+----------------------------------
+
+ Anwiki Lead Developer      : Antoine Walter <anw -at- anwiki.com>
+ 
+ That's all... 
+ Contact me if you are interested to enrol. We are looking for PHP, AJAX and/or CSS specialist!
+
+
+
+ Anwiki translators
+----------------------------------
+
+Volunteers giving their time to translate Anwiki in your mother tongue:
+
+ (de) German:
+      Martin Basgier <majamee -at- mail15.com>
+
+ (fr) French:
+      Florentin Raud <florentin.raud -at- gmail.com>
+
+ (gr) Greek:
+      Stefanos Patmanidis <steve5yo -at- yahoo.com>
+
+ (it) Italian:
+      Panta <ulteo -at- sardiniatravel.it>
+      Enrico Ferrazzi <enryf89 -at- gmail.com>
+
+ (lt) Lithuanian:
+      Ruslanas Gžibovskis <ruslanas -at- qwq.lt>
+
+ (pl) Polish:
+      Adam Swiercz <clickoff -at- wp.pl>
+
+ (sl) Slovenian:
+      Mihael Simonič <smihael -at- gmail.com>
+
+ (zh_CN) Chinese:
+      Li Edouard <marabase -at- gmail.com>
+
+
+
+ Partners
+----------------------------------
+
+Special thanks to Anwiki partners:
+
+ Ulteo,       actively supporting Anwiki development      http://www.ulteo.com
+ Tuxfamily,   offering hosting services                   http://www.tuxfamily.org
+
+
+
+ Credits
+----------------------------------
+
+Anwiki is based on free softwares:
+
+ Programming langage:
+      PHP                         http://www.php.net
+ 
+ Database engine:
+      MySQL                       http://www.mysql.com
+ 
+ Javascript libs:
+      Prototype                   http://www.prototypejs.org
+      script.aculo.us             http://script.aculo.us/
+      Shortcuts                   http://www.openjs.com
+
+ Icons and flags:
+      FamFamFam mini icons        http://www.famfamfam.com
+      Wikimedia Commons           http://commons.wikimedia.org
+
